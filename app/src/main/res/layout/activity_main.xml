@@ -25,15 +25,15 @@
 
     <GridLayout
         android:id="@+id/buttonGrid"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:columnCount="5"
         android:rowCount="6"
-        app:layout_constraintTop_toBottomOf="@id/resultDisplay"
+        app:layout_constraintDimensionRatio="H,6:6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">>
+        app:layout_constraintEnd_toEndOf="parent">
 
         <Button style="@style/CalcButtons" android:text="MC" />
         <Button style="@style/CalcButtons" android:text="MR" />
@@ -43,7 +43,43 @@
 
         <Button style="@style/CalcButtons" android:text="←" />
         <Button style="@style/CalcButtons" android:text="CE" />
+        <Button style="@style/CalcButtons" android:text="C" />
+        <Button style="@style/CalcButtons" android:text="±" />
+        <Button style="@style/CalcButtons" android:text="√" />
 
+        <Button style="@style/CalcButtons" android:text="7" />
+        <Button style="@style/CalcButtons" android:text="8" />
+        <Button style="@style/CalcButtons" android:text="9" />
+        <Button style="@style/CalcButtons" android:text="/" />
+        <Button style="@style/CalcButtons" android:text="%" />
+
+        <Button style="@style/CalcButtons" android:text="4" />
+        <Button style="@style/CalcButtons" android:text="5" />
+        <Button style="@style/CalcButtons" android:text="6" />
+        <Button style="@style/CalcButtons" android:text="*" />
+        <Button style="@style/CalcButtons" android:text="1/x" />
+
+        <Button style="@style/CalcButtons" android:text="1" />
+        <Button style="@style/CalcButtons" android:text="2" />
+        <Button style="@style/CalcButtons" android:text="3" />
+        <Button style="@style/CalcButtons" android:text="-" />
+
+        <Button
+            style="@style/CalcButtons"
+            android:layout_rowSpan="2"
+            android:text="=">
+
+        </Button>
+
+        <Button
+            style="@style/CalcButtons"
+            android:layout_columnSpan="2"
+            android:text="0">
+
+        </Button>
+
+        <Button style="@style/CalcButtons" android:text="." />
+        <Button style="@style/CalcButtons" android:text="+" />
 
 
     </GridLayout>
