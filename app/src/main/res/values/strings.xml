@@ -1,3 +1,34 @@
 <resources>
     <string name="app_name">Calc</string>
+    <string name="result_text">0</string>
+    <string name="mc_button">MC</string>
+    <string name="mr_button">MR</string>
+    <string name="ms_button">MS</string>
+    <string name="mplus_button">M+</string>
+    <string name="m_minus_buton">M-</string>
+    <string name="backspace_button">←</string>
+    <string name="ce_button">CE</string>
+    <string name="clear_button">C</string>
+    <string name="flip_button">±</string>
+    <string name="sqrt_button">√</string>
+    <string name="seven_button">7</string>
+    <string name="eight_button">8</string>
+    <string name="nine_button">9</string>
+    <string name="division_button">/</string>
+    <string name="percent_button">%</string>
+    <string name="four_button">4</string>
+    <string name="five_button">5</string>
+    <string name="six_button">6</string>
+    <string name="multiply_button">*</string>
+    <string name="kazkoks_button">1/x</string>
+    <string name="one_button">1</string>
+    <string name="two_button">2</string>
+    <string name="three_button">3</string>
+    <string name="minus_button">-</string>
+    <string name="equals_button">=</string>
+    <string name="zero_button">0</string>
+    <string name="seperator_button">.</string>
+    <string name="plus_button">+</string>
+
+
 </resources>

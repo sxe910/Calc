@@ -11,7 +11,7 @@
         android:id="@+id/resultDisplay"
         android:layout_width="411dp"
         android:layout_height="155dp"
-        android:text="0"
+        android:text="@string/result_text"
         android:maxLines="1"
         android:autoSizeTextType="uniform"
         android:gravity="end"
@@ -35,51 +35,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button style="@style/CalcButtons" android:text="MC" />
-        <Button style="@style/CalcButtons" android:text="MR" />
-        <Button style="@style/CalcButtons" android:text="MS" />
-        <Button style="@style/CalcButtons" android:text="M+" />
-        <Button style="@style/CalcButtons" android:text="M-" />
+        <Button style="@style/CalcButtons" android:text="@string/mc_button" />
+        <Button style="@style/CalcButtons" android:text="@string/mr_button" />
+        <Button style="@style/CalcButtons" android:text="@string/ms_button" />
+        <Button style="@style/CalcButtons" android:text="@string/mplus_button" />
+        <Button style="@style/CalcButtons" android:text="@string/m_minus_buton" />
 
-        <Button style="@style/CalcButtons" android:text="←" android:onClick="onBackspaceClick" />
-        <Button style="@style/CalcButtons" android:text="CE" />
-        <Button style="@style/CalcButtons" android:text="C" android:onClick="onClearClick" />
-        <Button style="@style/CalcButtons" android:text="±" android:onClick="onFlipClick"/>
-        <Button style="@style/CalcButtons" android:text="√" android:onClick="onSqrtClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/backspace_button" android:onClick="onBackspaceClick" />
+        <Button style="@style/CalcButtons" android:text="@string/ce_button" />
+        <Button style="@style/CalcButtons" android:text="@string/clear_button" android:onClick="onClearClick" />
+        <Button style="@style/CalcButtons" android:text="@string/flip_button" android:onClick="onFlipClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/sqrt_button" android:onClick="onSqrtClick"/>
 
-        <Button style="@style/CalcButtons" android:text="7" android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="8" android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="9"  android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="/" android:onClick="onOperatorClick" />
-        <Button style="@style/CalcButtons" android:text="%" />
+        <Button style="@style/CalcButtons" android:text="@string/seven_button" android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/eight_button" android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/nine_button"  android:onClick="onDigitClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/division_button" android:onClick="onOperatorClick" />
+        <Button style="@style/CalcButtons" android:text="@string/percent_button" />
 
-        <Button style="@style/CalcButtons" android:text="4"  android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="5" android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="6" android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="*" android:onClick="onOperatorClick" />
-        <Button style="@style/CalcButtons" android:text="1/x" />
+        <Button style="@style/CalcButtons" android:text="@string/four_button"  android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/five_button" android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/six_button" android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/multiply_button" android:onClick="onOperatorClick" />
+        <Button style="@style/CalcButtons" android:text="@string/kazkoks_button" />
 
-        <Button style="@style/CalcButtons" android:text="1" android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="2" android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="3" android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="-" android:onClick="onOperatorClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/one_button" android:onClick="onDigitClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/two_button" android:onClick="onDigitClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/three_button" android:onClick="onDigitClick"/>
+        <Button style="@style/CalcButtons" android:text="@string/minus_button" android:onClick="onOperatorClick"/>
 
         <Button
             style="@style/CalcButtons"
             android:layout_rowSpan="2"
-            android:text="=" android:onClick="onEqualsClick">
+            android:text="@string/equals_button" android:onClick="onEqualsClick">
 
         </Button>
 
         <Button
             style="@style/CalcButtons"
             android:layout_columnSpan="2"
-            android:text="0" android:onClick="onDigitClick">
+            android:text="@string/zero_button" android:onClick="onDigitClick">
 
         </Button>
 
-        <Button style="@style/CalcButtons" android:text="." android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="+" android:onClick="onOperatorClick" />
+        <Button style="@style/CalcButtons" android:text="@string/seperator_button" android:onClick="onDigitClick" />
+        <Button style="@style/CalcButtons" android:text="@string/plus_button" android:onClick="onOperatorClick" />
 
 
     </GridLayout>
