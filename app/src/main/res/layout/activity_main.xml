@@ -45,41 +45,41 @@
         <Button style="@style/CalcButtons" android:text="CE" />
         <Button style="@style/CalcButtons" android:text="C" />
         <Button style="@style/CalcButtons" android:text="±" />
-        <Button style="@style/CalcButtons" android:text="√" />
+        <Button style="@style/CalcButtons" android:text="√" android:onClick="onSqrtClick"/>
 
         <Button style="@style/CalcButtons" android:text="7" android:onClick="onDigitClick" />
         <Button style="@style/CalcButtons" android:text="8" android:onClick="onDigitClick" />
         <Button style="@style/CalcButtons" android:text="9"  android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="/" />
+        <Button style="@style/CalcButtons" android:text="/" android:onClick="onOperatorClick" />
         <Button style="@style/CalcButtons" android:text="%" />
 
         <Button style="@style/CalcButtons" android:text="4"  android:onClick="onDigitClick" />
         <Button style="@style/CalcButtons" android:text="5" android:onClick="onDigitClick" />
         <Button style="@style/CalcButtons" android:text="6" android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="*" />
+        <Button style="@style/CalcButtons" android:text="*" android:onClick="onOperatorClick" />
         <Button style="@style/CalcButtons" android:text="1/x" />
 
         <Button style="@style/CalcButtons" android:text="1" android:onClick="onDigitClick"/>
         <Button style="@style/CalcButtons" android:text="2" android:onClick="onDigitClick"/>
         <Button style="@style/CalcButtons" android:text="3" android:onClick="onDigitClick"/>
-        <Button style="@style/CalcButtons" android:text="-" />
+        <Button style="@style/CalcButtons" android:text="-" android:onClick="onOperatorClick"/>
 
         <Button
             style="@style/CalcButtons"
             android:layout_rowSpan="2"
-            android:text="=">
+            android:text="=" android:onClick="onEqualsClick">
 
         </Button>
 
         <Button
             style="@style/CalcButtons"
             android:layout_columnSpan="2"
-            android:text="0">
+            android:text="0" android:onClick="onDigitClick">
 
         </Button>
 
         <Button style="@style/CalcButtons" android:text="." android:onClick="onDigitClick" />
-        <Button style="@style/CalcButtons" android:text="+" />
+        <Button style="@style/CalcButtons" android:text="+" android:onClick="onOperatorClick" />
 
 
     </GridLayout>

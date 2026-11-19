@@ -11,12 +11,17 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class MainActivity extends AppCompatActivity {
     private TextView display;
     private double firstOperand = 0;
     private String pendingOp = "";
     private boolean startNewNumber = true;
-    private double memory = 0;
+
+
+    private boolean error = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
     public void onDigitClick(View v) {
         String text = ((Button) v).getText().toString();
 
-        if (startNewNumber) {
+        if (startNewNumber || error) {
             display.setText(text.equals(".") ? "0." : text);
             startNewNumber = false;
+            error =false;
         } else {
             String current = display.getText().toString();
             if (text.equals(".") && current.contains(".")) return;
@@ -47,4 +53,62 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void onOperatorClick(View v) {
+        if (error) return;
+        String op = ((Button) v).getText().toString();
+
+        if (!pendingOp.isEmpty() && !startNewNumber) {
+            onEqualsClick(v);
+            if (error) return;
+        }
+
+        firstOperand = Double.parseDouble(display.getText().toString());
+        pendingOp = op;
+        startNewNumber = true;
+    }
+
+    public void onEqualsClick(View v){
+        if (error || pendingOp.isEmpty() ) return;
+        double second = Double.parseDouble(display.getText().toString());
+        double result;
+
+        switch (pendingOp){   // switch casai, kad skaiciuotu priklausomai nuo aritmetines operacijos zenklo
+            case "+": result = firstOperand + second; break;
+            case "-": result = firstOperand - second; break;
+            case "*": result = firstOperand * second; break;
+            case "/":
+                if(second == 0){ //tikrinam ar bandoma dalinti is nulio, nes tai yra ILLEGAL, CRIMINAL.
+                    display.setText("Dalyba is nulio negalima!!!!");
+                    error=true;
+                    firstOperand= 0;
+                    pendingOp="";
+                    startNewNumber=true;
+                    return;         //realiai tiesiog atstatom i pradine busena
+                }
+                result = firstOperand /second;
+                break;
+            default:
+                return;
+        }
+        firstOperand= result;
+        display.setText(new BigDecimal(result).setScale(10, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString());
+        pendingOp= "";
+        startNewNumber= true;
+    }
+    public void onSqrtClick(View v) {
+        if (error) return;
+        double value = Double.parseDouble(display.getText().toString());
+        if (value < 0) {
+            display.setText("SAKNIYS IS NEIGIAMO SKAICIAUS? NIU NIU NIU");
+            error = true;
+            firstOperand = 0;
+            pendingOp = "";
+            startNewNumber = true;
+            return;
+        }
+        display.setText(new BigDecimal(Math.sqrt(value)).setScale(10, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString());
+        startNewNumber = true;
+    }
+
 }
