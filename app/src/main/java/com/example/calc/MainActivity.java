@@ -110,5 +110,27 @@ public class MainActivity extends AppCompatActivity {
         display.setText(new BigDecimal(Math.sqrt(value)).setScale(10, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString());
         startNewNumber = true;
     }
+    public void onBackspaceClick(View v){  //trinam tik viena
+        if (error){
+            onClearClick(v);
+            return;
+        }
+        if(startNewNumber) return;
 
+        String current =display.getText().toString();
+        if(current.length() <=1 || (current.length() == 2 && current.startsWith("-"))){  //tiesiog jei yra tik vienas elementas ant ekrano, taip pat tikrinam 2 su -, nes tarkim skaicius "-1" butu traktuojamas kaip length 2, nepaisant to, kad realiai tai veinas skaicius.
+            display.setText("0");
+            startNewNumber=true;
+        }else{
+            display.setText(current.substring(0, current.length() - 1 ));
+        }
+    }
+
+    public void onClearClick(View v){  //tiesiog trinam viska
+        display.setText("0");
+        firstOperand= 0;
+        pendingOp = "";
+        startNewNumber = true;
+        error=false;
+    }
 }

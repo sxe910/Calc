@@ -41,9 +41,9 @@
         <Button style="@style/CalcButtons" android:text="M+" />
         <Button style="@style/CalcButtons" android:text="M-" />
 
-        <Button style="@style/CalcButtons" android:text="←" />
+        <Button style="@style/CalcButtons" android:text="←" android:onClick="onBackspaceClick" />
         <Button style="@style/CalcButtons" android:text="CE" />
-        <Button style="@style/CalcButtons" android:text="C" />
+        <Button style="@style/CalcButtons" android:text="C" android:onClick="onClearClick" />
         <Button style="@style/CalcButtons" android:text="±" />
         <Button style="@style/CalcButtons" android:text="√" android:onClick="onSqrtClick"/>
 
