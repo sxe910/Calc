@@ -44,7 +44,7 @@
         <Button style="@style/CalcButtons" android:text="←" android:onClick="onBackspaceClick" />
         <Button style="@style/CalcButtons" android:text="CE" />
         <Button style="@style/CalcButtons" android:text="C" android:onClick="onClearClick" />
-        <Button style="@style/CalcButtons" android:text="±" />
+        <Button style="@style/CalcButtons" android:text="±" android:onClick="onFlipClick"/>
         <Button style="@style/CalcButtons" android:text="√" android:onClick="onSqrtClick"/>
 
         <Button style="@style/CalcButtons" android:text="7" android:onClick="onDigitClick" />

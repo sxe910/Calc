@@ -110,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
         display.setText(new BigDecimal(Math.sqrt(value)).setScale(10, RoundingMode.HALF_UP).stripTrailingZeros().toPlainString());
         startNewNumber = true;
     }
-    public void onBackspaceClick(View v){  //trinam tik viena
+    public void onBackspaceClick(View v){  //trinam tik viena, beveik visad veikia, kartais neveikia nzn kodel :(
         if (error){
             onClearClick(v);
             return;
@@ -132,5 +132,19 @@ public class MainActivity extends AppCompatActivity {
         pendingOp = "";
         startNewNumber = true;
         error=false;
+    }
+
+    public void onFlipClick(View v){  //pakeicia skaiciaus zenkla
+        if (error) return;
+
+        String current = display.getText().toString();
+        if (current.equals("0")) return;
+
+        if(current.startsWith("-")){
+            display.setText(current.substring(1));
+        } else {
+            display.setText("-" +current);
+        }
+
     }
 }
